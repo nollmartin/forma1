@@ -1,0 +1,20 @@
+<div class="divTable redTable" style="width: 100%;" >
+    <div class="divTableHeading">
+        <div class="divTableRow">
+            <div class="divTableHead">{{'Futam' | uppercase }}</div>
+            <div class="divTableHead">{{'Dátum' | uppercase }}</div>
+            <div class="divTableHead">{{'Győztes' | uppercase }}</div>
+            <div class="divTableHead">{{'Csapat' | uppercase }}</div>
+            <div class="divTableHead">{{'Körök száma' | uppercase }}</div>
+        </div>
+    </div>
+<div *ngFor="let row of results; let i = index" class="divTableBody">
+    <div (click)="changeIndexClicked(i)" [ngClass]="{divTableRow: (i % 2 === 0), divTableRow2: !(i % 2 === 0), divTableRow3: (i===selectedIndex)}">
+        <div class="divTableCell">{{row.grandPrix}}</div>
+        <div class="divTableCell">{{row.date | date:'longDate'}}</div>
+        <div class="divTableCell">{{row.winner}}</div>
+        <div class="divTableCell">{{row.team | uppercase}}</div>
+        <div class="divTableCell">{{row.laps}}</div>
+    </div>
+</div>
+</div>
